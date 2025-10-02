@@ -1,0 +1,46 @@
+{
+  "bot_description": "A Telegram bot that allows users to schedule messages to be delivered to themselves at specific times. Users provide both a message and a delivery time, and the bot delivers the message at the scheduled time. The bot supports both 24-hour and 12-hour time formats, automatically schedules messages for the next day if the specified time has passed, and provides comprehensive error handling and user feedback.",
+  "client_instructions": [
+    "Start the bot by sending the /start command to receive welcome instructions and learn how to use the bot",
+    "Send a message in the exact format: 'message: Your message text, time: HH:MM' where you replace 'Your message text' with your actual message and 'HH:MM' with your desired delivery time",
+    "Use supported time formats: 24-hour format (15:30, 15:30:45) or 12-hour format (3:30 PM, 3:30:45 PM, 3:30PM) - note that 12-hour format requires AM/PM designation",
+    "Wait for confirmation message that shows your scheduled message and delivery time - this confirms your message was successfully scheduled",
+    "Use /list command anytime to view all your currently scheduled messages with their delivery times",
+    "Use /help command to see detailed instructions, supported formats, and examples if you need assistance",
+    "Receive your scheduled message automatically at the specified delivery time - the bot will send it directly to you"
+  ],
+  "examples": [
+    {
+      "input": "message: Remember to call mom, time: 18:00",
+      "bot_response": "✅ Message Scheduled Successfully!\n\n📝 Message: Remember to call mom\n📅 Delivery Time: 2024-01-15 18:00:00\n\nYour message will be delivered to you at the scheduled time. You can use /list to see all your scheduled messages."
+    },
+    {
+      "input": "message: Take medication, time: 9:00 AM",
+      "bot_response": "✅ Message Scheduled Successfully!\n\n📝 Message: Take medication\n📅 Delivery Time: 2024-01-15 09:00:00\n\nYour message will be delivered to you at the scheduled time. You can use /list to see all your scheduled messages."
+    },
+    {
+      "input": "message: Meeting reminder, time: 14:30",
+      "bot_response": "✅ Message Scheduled Successfully!\n\n📝 Message: Meeting reminder\n📅 Delivery Time: 2024-01-15 14:30:00\n\nYour message will be delivered to you at the scheduled time. You can use /list to see all your scheduled messages."
+    },
+    {
+      "input": "Remember to call mom at 6 PM",
+      "bot_response": "❌ Invalid Format\n\nPlease use this format:\nmessage: Your message here, time: HH:MM\n\nExamples:\n- message: Remember to call mom, time: 18:00\n- message: Take medication, time: 9:00 AM\n\nSupported time formats:\n- 24-hour: 15:30, 15:30:45\n- 12-hour: 3:30 PM, 3:30:45 PM, 3:30PM"
+    },
+    {
+      "input": "message: Buy groceries, time: 25:00",
+      "bot_response": "❌ Invalid Time Format\n\nI couldn't understand the time: 25:00\n\nSupported formats:\n- 24-hour: 15:30, 15:30:45\n- 12-hour: 3:30 PM, 3:30:45 PM, 3:30PM\n\nExamples:\n- message: Buy groceries, time: 18:00\n- message: Buy groceries, time: 9:00 AM"
+    },
+    {
+      "input": "message: Doctor appointment, time: 10:30 AM",
+      "bot_response": "✅ Message Scheduled Successfully!\n\n📝 Message: Doctor appointment\n📅 Delivery Time: 2024-01-15 10:30:00\n\nYour message will be delivered to you at the scheduled time. You can use /list to see all your scheduled messages."
+    },
+    {
+      "input": "/list",
+      "bot_response": "📅 Your Scheduled Messages:\n\n1. Remember to call mom\n   📅 2024-01-15 18:00:00\n\n2. Take medication\n   📅 2024-01-15 09:00:00\n\n3. Meeting reminder\n   📅 2024-01-15 14:30:00"
+    },
+    {
+      "input": "message: , time: 15:30",
+      "bot_response": "❌ Invalid Format\n\nPlease use this format:\nmessage: Your message here, time: HH:MM\n\nExamples:\n- message: Remember to call mom, time: 18:00\n- message: Take medication, time: 9:00 AM\n\nSupported time formats:\n- 24-hour: 15:30, 15:30:45\n- 12-hour: 3:30 PM, 3:30:45 PM, 3:30PM"
+    }
+  ]
+}
